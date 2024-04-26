@@ -18,9 +18,11 @@ void home_draw() {
   PImage logo1;
   
   logo1 = loadImage("images/climbing.png");
-  home_background = loadImage("Main.png");
+  home_background = loadImage("images/Main.png");
   
   background(home_background);
+  
+
   
   // Draw buttons
   mode1Button.display();
@@ -52,6 +54,7 @@ void processButtonClicks() {
   }
   if (mode2Clicked) {
     mode2Clicked = false;
+    tab = "mode2";
     // Add action for Mode 2 button
   }
   if (mode3Clicked) {
