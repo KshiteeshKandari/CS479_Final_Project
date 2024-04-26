@@ -1,6 +1,6 @@
 
 int minFSRValue = 0; // Minimum expected value for FSR input
-int maxFSRValue =2; // Maximum expected value for FSR input
+int maxFSRValue = 60; // Maximum expected value for FSR input
 int heatmapDiameter; // Diameter of each individual heatmap
 int[][] fsrValues; // 2D Array to store FSR values for each sensor
 ArrayList<ArrayList<Integer>> fsrHistory; // To store a history of values for drawing the graphs
@@ -36,6 +36,12 @@ void mode1_draw(){
   image(pt,-70,700,850,500);
   
   writeText(300, 950);
+  //------------------------------------------------------------
+  //fsrValues[0][fsrValues[0].length - 1] = thumb; // Most recent MF value
+  //fsrValues[1][fsrValues[1].length - 1] = finger; // Most recent LF value
+  //fsrValues[2][fsrValues[2].length - 1] = center; // Most recent MM value
+  //fsrValues[3][fsrValues[3].length - 1] = lower; // Most recent HEEL value
+  
   // Simulate live FSR values updating for each sensor
    for (int j = 0; j < fsrValues.length; j++) {
     for (int i = 0; i < fsrValues[j].length; i++) {

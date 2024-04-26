@@ -1,10 +1,27 @@
+//import processing.serial.*;
+//Serial myPort;
+
 String tab = "flex";
 float fade = 255;  // For fade-in and fade-out effect
 boolean transitioning = false;
 
 PImage home;
 PFont f;
+
+//int lower;
+//int center;
+//int finger;
+//int thumb;
+//int flex;
+//int emg;
+
 void setup() {
+  
+  String portName = Serial.list()[0];
+  print(Serial.list());
+  myPort = new Serial(this, portName, 115200);
+  myPort.bufferUntil('\n');
+  
   size(700, 1000); // iPhone 6/7/8 screen dimensions (portrait mode)
   home_setup();
   mode1_setup();
@@ -67,6 +84,19 @@ void fadeIn() {
     transitioning = false; // End transition
   }
 }
+
+//void serialEvent(Serial myPort){
+//  String tempVal = myPort.readStringUntil('\n');
+//  if (tempVal != null){
+//    String[] values = split(tempVal, ' ');
+//    lower = int(values[0]);
+//    center = int(values[1]);
+//    finger = int(values[2]);
+//    thumb = int(values[3]);
+//    flex = int(values[4]);
+//    emg = int(values[5]);
+//  }  
+//}
 
 void mouseClicked() {
   
