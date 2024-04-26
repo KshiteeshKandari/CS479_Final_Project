@@ -1,16 +1,20 @@
 Button mode1Button;
 Button mode2Button;
 Button mode3Button;
+Button mode4Button;
 boolean mode1Clicked = false;
 boolean mode2Clicked = false;
 boolean mode3Clicked = false;
+boolean mode4Clicked = false;
 //String tab = ""; // Variable to store the active tab
 
 void home_setup() {
   // Create buttons
   mode1Button = new Button(width/2 - 100, 350, 200, 50, "Grip");
   mode2Button = new Button(width/2 - 100, 450, 200, 50, "Muscle");
-  mode3Button = new Button(width/2 - 100, 550, 200, 50, "Train");
+  mode3Button = new Button(width/2 - 100, 550, 200, 50, "Flex");
+  mode4Button = new Button(width/2 - 100, 650, 200, 50, "Train");
+  
 }
 
 void home_draw() {
@@ -28,6 +32,7 @@ void home_draw() {
   mode1Button.display();
   mode2Button.display();
   mode3Button.display();
+  mode4Button.display();
   
   // Check if any button is clicked and change appearance
   if (mode1Button.isClicked()) {
@@ -41,6 +46,10 @@ void home_draw() {
   if (mode3Button.isClicked()) {
     println("Mode 3 button clicked");
     mode3Clicked = true;
+  }
+  if (mode4Button.isClicked()) {
+    println("Mode 4 button clicked");
+    mode4Clicked = true;
   }
   
   // Process button clicks
@@ -59,6 +68,12 @@ void processButtonClicks() {
   }
   if (mode3Clicked) {
     mode3Clicked = false;
+    // Add action for Mode 3 button
+    tab = "train";
+  }
+  if (mode4Clicked) {
+    mode4Clicked = false;
+     tab = "flex";
     // Add action for Mode 3 button
   }
 }

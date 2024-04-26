@@ -31,6 +31,12 @@ void draw() {
       case "mode2":
         mode2_draw();
         break;
+      case "flex":
+        flex_draw();
+        break;
+      case "train":
+        train_draw();
+        break;
     }
   } else {
     // The draw function will keep calling fadeIn until transitioning is false
@@ -71,7 +77,7 @@ void mouseClicked() {
       tab = "home"; // Set next tab to 'home'
     }
   }
-  else if (tab == "mode1" || tab == "mode2"){
+  else if (tab == "mode1" || tab == "mode2" || tab == "flex"|| tab == "train"){
   
    if (mouseX >= width-70 && mouseX <= width-70+50 && mouseY >= 20 && mouseY <= 20+50){
       tab = "home";
