@@ -3,13 +3,16 @@ float fade = 255;  // For fade-in and fade-out effect
 boolean transitioning = false;
 
 PImage home;
-
+PFont f;
 void setup() {
   size(700, 1000); // iPhone 6/7/8 screen dimensions (portrait mode)
   home_setup();
   mode1_setup();
   start_setup();
+  mode2_setup();
   home = loadImage("images/home.png");
+  f = createFont("font/f.ttf",24);
+  textFont(f);
   // Initialize other setups if necessary
 }
 

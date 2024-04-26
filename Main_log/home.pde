@@ -8,9 +8,9 @@ boolean mode3Clicked = false;
 
 void home_setup() {
   // Create buttons
-  mode1Button = new Button(width/2 - 100, 200, 200, 50, "Mode 1");
-  mode2Button = new Button(width/2 - 100, 300, 200, 50, "Mode 2");
-  mode3Button = new Button(width/2 - 100, 400, 200, 50, "Mode 3");
+  mode1Button = new Button(width/2 - 100, 350, 200, 50, "Grip");
+  mode2Button = new Button(width/2 - 100, 450, 200, 50, "Muscle");
+  mode3Button = new Button(width/2 - 100, 550, 200, 50, "Train");
 }
 
 void home_draw() {

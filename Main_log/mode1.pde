@@ -4,14 +4,14 @@ int maxFSRValue =2; // Maximum expected value for FSR input
 int heatmapDiameter; // Diameter of each individual heatmap
 int[][] fsrValues; // 2D Array to store FSR values for each sensor
 ArrayList<ArrayList<Integer>> fsrHistory; // To store a history of values for drawing the graphs
-PFont f;
+
 
 
 
 void mode1_setup(){
   int sensors = 4;
   fsrValues = new int[sensors][20];// More sensor points for a smoother gradient
-  f = createFont("font/f.ttf",24);
+ 
 
   heatmapDiameter = width / 12; // Choose an appropriate size for the individual heatmaps
 
@@ -35,7 +35,7 @@ void mode1_draw(){
   image(hand,10,10,600,900);
   image(pt,-70,700,850,500);
   
-  writeText(15, 950);
+  writeText(300, 950);
   // Simulate live FSR values updating for each sensor
    for (int j = 0; j < fsrValues.length; j++) {
     for (int i = 0; i < fsrValues[j].length; i++) {
@@ -76,7 +76,7 @@ void drawCircularHeatmap(int[] sensorValues, float centerX, float centerY, int d
 void writeText(int x , int y){
   textFont(f);
   
-  textSize(34); 
+  textSize(23); 
   stroke(0);// Set the text size to 42
   fill(0); // Set the fill color to blue (RGB)
   text("You are focusing too much on X grip", x, y);
