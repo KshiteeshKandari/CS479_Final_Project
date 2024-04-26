@@ -69,11 +69,11 @@ void processButtonClicks() {
   if (mode3Clicked) {
     mode3Clicked = false;
     // Add action for Mode 3 button
-    tab = "train";
+    tab = "flex";
   }
   if (mode4Clicked) {
     mode4Clicked = false;
-     tab = "flex";
+     tab = "train";
     // Add action for Mode 3 button
   }
 }

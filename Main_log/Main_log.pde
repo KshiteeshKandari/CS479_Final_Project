@@ -1,4 +1,4 @@
-String tab = "start";
+String tab = "flex";
 float fade = 255;  // For fade-in and fade-out effect
 boolean transitioning = false;
 
