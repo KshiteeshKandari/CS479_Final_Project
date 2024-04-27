@@ -12,7 +12,7 @@ void home_setup() {
   // Create buttons
   mode1Button = new Button(width/2 - 100, 350, 200, 50, "Grip");
   mode2Button = new Button(width/2 - 100, 450, 200, 50, "Muscle");
-  mode3Button = new Button(width/2 - 100, 550, 200, 50, "Flex");
+  mode3Button = new Button(width/2 - 100, 550, 200, 50, "Form");
   mode4Button = new Button(width/2 - 100, 650, 200, 50, "Train");
   
 }
