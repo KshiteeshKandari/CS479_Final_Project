@@ -98,7 +98,6 @@ class Button {
       fill(255, 100); // Translucent white color
     }
     rect(x, y, w, h);
-    
     textAlign(CENTER, CENTER);
     textSize(16);
     fill(0); // Black text color

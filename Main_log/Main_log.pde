@@ -27,6 +27,8 @@ void setup() {
   mode1_setup();
   start_setup();
   mode2_setup();
+  elbow_setup();
+  wrist_setup();
   home = loadImage("images/home.png");
   f = createFont("font/f.ttf",24);
   textFont(f);
@@ -105,8 +107,8 @@ void fadeIn() {
 //}
 
 void mouseClicked() {
-  println(mouseX, mouseY);
-  print(tab);
+  //println(mouseX, mouseY);
+  //print(tab);
   if (mouseX >= buttonX && mouseX <= buttonX + buttonWidth &&
       mouseY >= buttonY && mouseY <= buttonY + buttonHeight){
     if (tab == "start" && !transitioning) {
@@ -128,7 +130,10 @@ void mouseClicked() {
     if (mouseX > 0 && mouseX < width && mouseY > 650 && mouseY < 900) {
       tab = "elbow";
   }
-  
+  if(tab == "elbow"){
+   targetAngle = random(TWO_PI);
+   print(targetAngle);
+  }
   }
 }
 
