@@ -1,7 +1,7 @@
 //import processing.serial.*;
 //Serial myPort;
 
-String tab = "home";
+String tab = "start";
 float fade = 255;  // For fade-in and fade-out effect
 boolean transitioning = false;
 

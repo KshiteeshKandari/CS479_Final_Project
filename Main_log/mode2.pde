@@ -52,7 +52,7 @@ void mode2_draw() {
   
    //updateXAxisLabels();
 
-  if (showFirstImage) {
+  if (emgData[0]> 200) {
     image(forearm1, width - forearm1.width, height / 4 - forearm1.height / 2); // Display the first image on the top right
   } else {
     image(forearm2, width - forearm2.width, height / 4 - forearm2.height / 2); // Display the second image on the top right
