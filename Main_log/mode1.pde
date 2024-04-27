@@ -86,4 +86,6 @@ void writeText(int x , int y){
   stroke(0);// Set the text size to 42
   fill(0); // Set the fill color to blue (RGB)
   text("You are focusing too much on X grip", x, y);
+  stroke(1);
+  noFill();
 }

@@ -1,7 +1,7 @@
 //import processing.serial.*;
 //Serial myPort;
 
-String tab = "flex";
+String tab = "start";
 float fade = 255;  // For fade-in and fade-out effect
 boolean transitioning = false;
 
@@ -17,10 +17,10 @@ PFont f;
 
 void setup() {
   
-  String portName = Serial.list()[0];
-  print(Serial.list());
-  myPort = new Serial(this, portName, 115200);
-  myPort.bufferUntil('\n');
+  //String portName = Serial.list()[0];
+  //print(Serial.list());
+  //myPort = new Serial(this, portName, 115200);
+  //myPort.bufferUntil('\n');
   
   size(700, 1000); // iPhone 6/7/8 screen dimensions (portrait mode)
   home_setup();
