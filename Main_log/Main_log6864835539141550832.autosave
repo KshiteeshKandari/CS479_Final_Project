@@ -1,7 +1,7 @@
 //import processing.serial.*;
 //Serial myPort;
 
-String tab = "home";
+String tab = "flex";
 float fade = 255;  // For fade-in and fade-out effect
 boolean transitioning = false;
 
@@ -54,12 +54,6 @@ void draw() {
       case "train":
         train_draw();
         break;
-      case "wrist":
-        wrist_draw();
-        break;
-      case "elbow":
-        elbow_draw();
-        break;
     }
   } else {
     // The draw function will keep calling fadeIn until transitioning is false
@@ -105,8 +99,7 @@ void fadeIn() {
 //}
 
 void mouseClicked() {
-  println(mouseX, mouseY);
-  print(tab);
+  
   if (mouseX >= buttonX && mouseX <= buttonX + buttonWidth &&
       mouseY >= buttonY && mouseY <= buttonY + buttonHeight){
     if (tab == "start" && !transitioning) {
@@ -114,21 +107,11 @@ void mouseClicked() {
       tab = "home"; // Set next tab to 'home'
     }
   }
-  if (tab == "mode1" || tab == "mode2" || tab == "flex"|| tab == "train" || tab == "wrist"|| tab == "elbow"){
+  else if (tab == "mode1" || tab == "mode2" || tab == "flex"|| tab == "train"){
   
-   if (mouseX >= 50 && mouseX <= width-70+50 && mouseY >= 20 && mouseY <= 20+50){
+   if (mouseX >= width-70 && mouseX <= width-70+50 && mouseY >= 20 && mouseY <= 20+50){
       tab = "home";
       }
-  }
-  if (tab == "flex"){
-    if (mouseX > 0 && mouseX < width && mouseY > 50 && mouseY < 450) {
-        tab = "wrist";
-
-     }
-    if (mouseX > 0 && mouseX < width && mouseY > 650 && mouseY < 900) {
-      tab = "elbow";
-  }
-  
   }
 }
 
