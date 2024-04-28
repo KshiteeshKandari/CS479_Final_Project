@@ -1,4 +1,9 @@
-  int count = 0;
+  long lastIncrementTime = 0;
+  long incrementInterval = 2500; 
+  
+  
+  int flex_count = 0;
+  int muscle_count = 0;
  int gap = 20;
 void train_draw() {
   PImage train_bg;
@@ -19,11 +24,18 @@ void train_draw() {
 //count the amount of errors during climbing
 //-------------------------------------------------------
 // add this when we implement everything
-  if (emg > 500 || flex > 0){
-  count++;
-  println(count);
+  if(millis() - lastIncrementTime >= incrementInterval){
+    if (flex > 0){
+      flex_count++;
+      //println(flex_count);
+    }
+    if (emg > 500){
+      muscle_count++;
+      //println(muscle_count);
+    }
+    lastIncrementTime = millis();
   }
-  
+  println(flex_count, muscle_count);
 //---------------------------------------------------------
 //currently only currentEmg is working, not sure how to update the angle with what ash's code
   //updateAngle();
