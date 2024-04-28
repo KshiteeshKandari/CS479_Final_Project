@@ -1,10 +1,11 @@
   long lastIncrementTime = 0;
   long incrementInterval = 2500; 
   
-  
+  int previous_flex = 0;
+  int previous_muscle = 0;
   int flex_count = 0;
   int muscle_count = 0;
- int gap = 20;
+  int gap = 20;
 void train_draw() {
   PImage train_bg;
   train_bg = loadImage("images/train.jpg");
@@ -20,12 +21,31 @@ void train_draw() {
   int buttonHeight = 150;
 
 
+  // Draw labels and mistake counters above the horizontal line
+  fill(0); // Black text color
+  textAlign(RIGHT, CENTER);
+  text("Joint Form Errors:", width / 2 - gap * 5, height / 6 - gap);
+  text("Excessive Muscle Usage:", width / 2 - gap * 5, height / 6 - gap * 3); // Adjusted position for label
+  
+  textAlign(LEFT, CENTER);
+  text(flex_count, width / 2 - gap*4, height / 6 - gap); // Flex counter
+  text(muscle_count, width / 2 - gap*4, height / 6 - gap * 3); // Muscle counter
+
+  textAlign(RIGHT, CENTER);
+  text("Previous Joint Form Errors:", width / 2 + gap * 12, height / 6 - gap); // Previous flex label
+  text("Previous Excessive Muscle Usage:", width / 2 + gap * 12, height / 6 - gap * 3); // Previous muscle label
+  
+  textAlign(LEFT, CENTER);
+  // Previous flex counter
+  text(previous_flex, width / 2 + gap * 13, height / 6 - gap);
+  // Previous muscle counter
+  text(previous_muscle, width / 2 + gap * 13, height / 6 - gap * 3);
 
 //count the amount of errors during climbing
 //-------------------------------------------------------
 // add this when we implement everything
   if(millis() - lastIncrementTime >= incrementInterval){
-    if (flex > 0){
+    if (flex > 5){
       flex_count++;
       //println(flex_count);
     }
@@ -49,7 +69,19 @@ void train_draw() {
   
   stroke(0); // Black color
   strokeWeight(3);
-  line(0, height/3, width, height/3); // Line from left edge to right edge, at middle height
+  line(0, height/3, width, height/3);
+  
+  
+int resetButtonWidth = 100;
+  int resetButtonHeight = 50;
+  int resetButtonX = (width - resetButtonWidth) / 2;
+  int resetButtonY = height / 6 - resetButtonHeight / 2 + 100;
+  fill(173, 216, 230);
+  rect(resetButtonX, resetButtonY, resetButtonWidth, resetButtonHeight);
+  fill(0); // Black text color
+  textAlign(CENTER, CENTER);
+  text("Reset", resetButtonX + resetButtonWidth / 2, resetButtonY + resetButtonHeight / 2);
+  
 
   // Draw background rectangles for buttons
   fill(255, 100); // White with transparency
@@ -109,4 +141,20 @@ void mousePressed() {
     // Jugs button clicked
     println("Jugs button clicked!");
   }
+  
+  // Check if mouse is within the area of the reset button
+  int resetButtonWidth = 100;
+  int resetButtonHeight = 50;
+  int resetButtonX = (width - resetButtonWidth) / 2;
+  int resetButtonY = height / 6 - resetButtonHeight / 2;
+  if (mouseX >= resetButtonX && mouseX <= resetButtonX + resetButtonWidth && mouseY >= resetButtonY + 100 && mouseY <= resetButtonY + resetButtonHeight + 100) {
+    previous_flex = flex_count;
+    previous_muscle = muscle_count;
+    // Reset button clicked
+    flex_count = 0;
+    muscle_count = 0;
+    println("Counters reset!");
+  }
+  
+  // Your existing code for handling other button clicks
 }

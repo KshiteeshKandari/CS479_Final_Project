@@ -42,7 +42,7 @@ void setup()
   // Serial.println("MyoWare Example_01_analogRead_SINGLE");
 }
 
-void loop() 
+void loop()   
 {  
   finger1 = analogRead(Pin1);
   finger2 = analogRead(Pin2);
