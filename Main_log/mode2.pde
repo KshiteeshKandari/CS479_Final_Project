@@ -12,7 +12,7 @@ int dataPoints;
 int graphHeight;
 float startTime; // Start time in seconds
 float currentTime; // Current time in seconds
-
+int currentEmg;
 // Additional variables for dynamic x-axis labels
 float graphStartTime; // The start time of the graph
 float graphDuration = 10.0; // Duration of the graph window in seconds
@@ -30,7 +30,7 @@ void mode2_setup() {
 }
 
 void mode2_draw() {
-    currentTime = millis() / 1000.0; // Update the current time
+  currentTime = millis() / 1000.0; // Update the current time
   float elapsedTime = currentTime - startTime; // Calculate elapsed time since start
   PImage m2_bg;
   m2_bg = loadImage("images/mode2.jpg");
@@ -63,7 +63,8 @@ void updateEmgData() {
   for (int i = emgData.length - 1; i > 0; i--) {
     emgData[i] = emgData[i - 1];
   }
-  emgData[0] = (int)random(minValue, maxValue); // Generate a new random data point
+  currentEmg = (int)random(minValue, maxValue);
+  emgData[0] = currentEmg; // Generate a new random data point
 }
 
 void drawGraph() {

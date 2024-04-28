@@ -1,4 +1,4 @@
-
+  int count = 0;
  int gap = 20;
 void train_draw() {
   PImage train_bg;
@@ -14,6 +14,26 @@ void train_draw() {
   int buttonWidth = 150;
   int buttonHeight = 150;
 
+
+
+//count the amount of errors during climbing
+//-------------------------------------------------------
+// add this when we implement everything
+  //if (emg > 600 || flex > 0){
+  //count++;
+  //}
+  
+//---------------------------------------------------------
+//currently only currentEmg is working, not sure how to update the angle with what ash's code
+  //updateAngle();
+  //manageAngleUpdate();
+  updateEmgData();
+  if(angle > 100 || currentEmg > 380){
+  count++;
+  println(count);
+  }  
+//-----------------------------------------------------  need to print out information on the top part of the code, make reset button
+  
   stroke(0); // Black color
   strokeWeight(3);
   line(0, height/3, width, height/3); // Line from left edge to right edge, at middle height
@@ -48,6 +68,8 @@ void train_draw() {
   image(jugs, 4*gap + 3*buttonWidth, height - buttonHeight - gap, buttonWidth, buttonHeight);
   textAlign(CENTER, CENTER);
   text("Jugs", 4*gap + 3*buttonWidth + buttonWidth/2, height - gap - buttonHeight - 20);
+  
+  home_button();
 }
 
 void mousePressed() {
