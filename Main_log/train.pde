@@ -155,6 +155,5 @@ void mousePressed() {
     muscle_count = 0;
     println("Counters reset!");
   }
-  
-  // Your existing code for handling other button clicks
+
 }
