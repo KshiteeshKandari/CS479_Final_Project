@@ -13,7 +13,7 @@ int center;
 int finger;
 int thumb;
 int flex;
-int emg;
+float emg;
 
 void setup() {
   
@@ -102,8 +102,9 @@ void serialEvent(Serial myPort){
     finger = int(values[2]);
     thumb = int(values[3]);
     flex = int(values[4]);
-    emg = int(values[5]);
-    print(emg);
+    emg = float(values[5]);
+    println(emg);
+    
   }  
 }
 
