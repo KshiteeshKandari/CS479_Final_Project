@@ -65,7 +65,7 @@ void drawCircularHeatmap(int[] sensorValues, float centerX, float centerY, int d
   int highestValue = max(sensorValues); // Find the max value for the most intense part of the gradient
 
   // Cap for the diameter of the red center
-  float maxCenterDiameter = diameter / 10; // For example, let's say we don't want it to be more than a quarter of the total diameter
+  float maxCenterDiameter = diameter / 15;// For example, let's say we don't want it to be more than a quarter of the total diameter
   float normalizedValue = map(highestValue, minFSRValue, maxFSRValue, 0, maxCenterDiameter);
 
   // Draw concentric circles from the center

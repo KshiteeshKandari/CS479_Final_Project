@@ -13,6 +13,7 @@ void train_draw() {
   PImage crimp = loadImage("images/crimp.png");
   PImage sloper = loadImage("images/sloper.png");
   PImage jugs = loadImage("images/jugs.png");
+  PImage hand = loadImage("images/hand.png");
 
   background(train_bg);
 
@@ -113,6 +114,19 @@ int resetButtonWidth = 100;
   image(jugs, 4*gap + 3*buttonWidth, height - buttonHeight - gap, buttonWidth, buttonHeight);
   textAlign(CENTER, CENTER);
   text("Jugs", 4*gap + 3*buttonWidth + buttonWidth/2, height - gap - buttonHeight - 20);
+
+  //add heatmap
+  
+    image(hand,gap ,height/3 + gap,300,430);
+    fsrValues[0][fsrValues[0].length - 1] = thumb; // Most recent MF value
+    fsrValues[1][fsrValues[1].length - 1] = finger; // Most recent LF value
+    fsrValues[2][fsrValues[2].length - 1] = center; // Most recent MM value
+    fsrValues[3][fsrValues[3].length - 1] = lower; // Most recent HEEL value
+    drawCircularHeatmap(fsrValues[0], (width / 4)+80, (height / 5)+365, heatmapDiameter-20);
+    //print(fsrValues[0]);
+    drawCircularHeatmap(fsrValues[1], width / 4 -3, 2 * height / 5 + 105, heatmapDiameter-20);
+    drawCircularHeatmap(fsrValues[2], width / 4 - 20, 3 * (height / 7)+200, heatmapDiameter-20);
+    drawCircularHeatmap(fsrValues[3], width / 4 + 20, 3 * (height / 5)+85, heatmapDiameter-20);
   
   home_button();
 }
