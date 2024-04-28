@@ -3,7 +3,7 @@ boolean showFirstImage = true;
 
 int[] emgData;
 int graphWidth;
-int maxValue = 400; // Simulated maximum value for EMG data
+int maxValue = 1023; // Simulated maximum value for EMG data
 int minValue = 0; // Simulated minimum value for EMG data
 int dataPointSpacing = 3; // Spacing between data points
 int leftMargin = 60; // Margin for the y-axis
@@ -64,7 +64,7 @@ void updateEmgData() {
     emgData[i] = emgData[i - 1];
   }
   currentEmg = (int)random(minValue, maxValue);
-  emgData[0] = currentEmg; // Generate a new random data point
+  emgData[0] = emg; // Generate a new random data point
 }
 
 void drawGraph() {
