@@ -14,6 +14,9 @@ void train_draw() {
   int buttonWidth = 150;
   int buttonHeight = 150;
 
+  stroke(0); // Black color
+  strokeWeight(3);
+  line(0, height/3, width, height/3); // Line from left edge to right edge, at middle height
 
   // Draw background rectangles for buttons
   fill(255, 100); // White with transparency
