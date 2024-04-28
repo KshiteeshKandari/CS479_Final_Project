@@ -37,16 +37,16 @@ void mode1_draw(){
   
   writeText(300, 950);
   //------------------------------------------------------------
-  //fsrValues[0][fsrValues[0].length - 1] = thumb; // Most recent MF value
-  //fsrValues[1][fsrValues[1].length - 1] = finger; // Most recent LF value
-  //fsrValues[2][fsrValues[2].length - 1] = center; // Most recent MM value
-  //fsrValues[3][fsrValues[3].length - 1] = lower; // Most recent HEEL value
+  fsrValues[0][fsrValues[0].length - 1] = thumb; // Most recent MF value
+  fsrValues[1][fsrValues[1].length - 1] = finger; // Most recent LF value
+  fsrValues[2][fsrValues[2].length - 1] = center; // Most recent MM value
+  fsrValues[3][fsrValues[3].length - 1] = lower; // Most recent HEEL value
   
   // Simulate live FSR values updating for each sensor
    for (int j = 0; j < fsrValues.length; j++) {
     for (int i = 0; i < fsrValues[j].length; i++) {
-      int newValue = (int)random(minFSRValue, maxFSRValue + 1);
-      fsrValues[j][i] = (fsrValues[j][i] + newValue) / 2; // Average with the previous value for smoothing
+      //int newValue = (int)random(minFSRValue, maxFSRValue + 1);
+      //fsrValues[j][i] = (fsrValues[j][i] + newValue) / 2; // Average with the previous value for smoothing
     }
   }
    // Draw heatmaps for each sensor on the left

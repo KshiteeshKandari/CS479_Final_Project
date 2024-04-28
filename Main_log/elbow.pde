@@ -30,9 +30,9 @@ void elbow_draw(){
   displayFlexAngle();
    // Draw the image in the center of the canvas based on the angle
   //imageMode(CENTER); // Ensure the images are drawn centered on their coordinates
-  if (angle > radians(120)) {
+  if (angle < radians(4)) {
     image(bt1, -300, height / 6); // Adjust the y coordinate as needed
-  } else if (angle < radians(120)) {
+  } else if (angle > radians(5)) {
     image(bt2, -210, height / 8-50); // Adjust the y coordinate as needed
   }
   
@@ -78,10 +78,8 @@ void updateAngle() {
 
 void manageAngleUpdate() {
   // Update the target angle periodically
-  if (timeSinceLastUpdate > updateInterval) {
-    targetAngle = random(PI); // Generate a new random target angle within 0 to 180 degrees
-    timeSinceLastUpdate = 0; // Reset the time counter
-  }
+  float inputAngle = map(flex, 0, 45, 0, HALF_PI); // Map input values to angle range (0 to 90 degrees)
+  targetAngle = inputAngle; // Set the target angle
   timeSinceLastUpdate++; // Increment the time counter
 }
 
