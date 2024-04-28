@@ -14,6 +14,7 @@ int finger;
 int thumb;
 int flex;
 float emg;
+String hold;
 
 void setup() {
   
@@ -106,6 +107,24 @@ void serialEvent(Serial myPort){
     //println(emg);
     
   }  
+}
+
+void Threshold(){
+  if (finger > 600 && lower < 300 && center < 300 && thumb < 300){
+    hold = "crimp";
+  }
+  else if (finger > 500 && thumb > 500 && center < 300 && lower < 300){
+    hold = "pinch";
+  }
+  else if (finger > 400 && thumb > 400 && center > 400 && lower < 300){
+    hold = "jug";
+  }
+  else if (finger > 400 && thumb > 100 && center > 100 && lower > 300){
+    hold = "sloper";
+  }
+  else{
+    hold = "nothing";
+  }
 }
 
 void mouseClicked() {

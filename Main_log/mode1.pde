@@ -81,11 +81,17 @@ void drawCircularHeatmap(int[] sensorValues, float centerX, float centerY, int d
 
 void writeText(int x , int y){
   textFont(f);
-  
+  Threshold();
   textSize(23); 
   stroke(0);// Set the text size to 42
   fill(0); // Set the fill color to blue (RGB)
-  text("You are focusing too much on X grip", x, y);
+  if (hold == "nothing"){
+    text("You are holding nothing", x, y);
+  }
+  else {
+  text("You are currently holding a " + hold + " grip", x, y);
+  }
+  
   stroke(1);
   noFill();
 }
