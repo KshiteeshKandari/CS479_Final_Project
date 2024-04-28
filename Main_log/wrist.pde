@@ -22,9 +22,9 @@ void wrist_draw(){
   displayFlexAngle();
   home_button();
   
-  if (angle > radians(120)) {
+  if (angle < radians(4)) {
     image(wr_st, -400, height / 5); // Adjust the y coordinate as needed
-  } else if (angle < radians(120)) {
+  } else if (angle > radians(5)) {
     image(wr_bt, -400, height / 5); // Adjust the y coordinate as needed
   }
   

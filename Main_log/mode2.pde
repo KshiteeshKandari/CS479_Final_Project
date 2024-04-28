@@ -1,7 +1,7 @@
 PImage forearm1, forearm2;
 boolean showFirstImage = true;
 
-int[] emgData;
+float[] emgData;
 int graphWidth;
 int maxValue = 1023; // Simulated maximum value for EMG data
 int minValue = 0; // Simulated minimum value for EMG data
@@ -25,7 +25,7 @@ void mode2_setup() {
   graphWidth = width - leftMargin;
   dataPoints = graphWidth / dataPointSpacing;
   graphHeight = (height / 2) - bottomMargin;
-  emgData = new int[dataPoints];
+  emgData = new float[dataPoints];
   frameRate(30);
 }
 
