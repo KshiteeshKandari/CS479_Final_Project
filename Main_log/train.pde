@@ -19,19 +19,20 @@ void train_draw() {
 //count the amount of errors during climbing
 //-------------------------------------------------------
 // add this when we implement everything
-  //if (emg > 600 || flex > 0){
-  //count++;
-  //}
+  if (emg > 500 || flex > 0){
+  count++;
+  println(count);
+  }
   
 //---------------------------------------------------------
 //currently only currentEmg is working, not sure how to update the angle with what ash's code
   //updateAngle();
   //manageAngleUpdate();
-  updateEmgData();
-  if(angle > 100 || currentEmg > 380){
-  count++;
-  println(count);
-  }  
+  //updateEmgData();
+  //if(angle > 100 || currentEmg > 380){
+  //count++;
+  //println(count);
+  //}  
 //-----------------------------------------------------  need to print out information on the top part of the code, make reset button
   
   stroke(0); // Black color

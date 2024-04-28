@@ -17,7 +17,7 @@ float emg;
 
 void setup() {
   
-  String portName = Serial.list()[1];
+  String portName = Serial.list()[0];
   print(Serial.list());
   myPort = new Serial(this, portName, 115200);
   myPort.bufferUntil('\n');
@@ -103,7 +103,7 @@ void serialEvent(Serial myPort){
     thumb = int(values[3]);
     flex = int(values[4]);
     emg = float(values[5]);
-    println(emg);
+    //println(emg);
     
   }  
 }
