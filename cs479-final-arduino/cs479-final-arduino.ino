@@ -68,7 +68,7 @@ void loop()
 
   Serial.println(sensorValue); // print out the value you read
 
-  delay(100); // to avoid overloading the serial terminal
+  delay(150); // to avoid overloading the serial terminal
 }
 
 // lower palm, center, finger, thumb, flex, emg ----- Tyler's
